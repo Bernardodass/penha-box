@@ -5,7 +5,7 @@ body {
     color: #333;
     background-color: #f4f4f4;
 }
-h1 {
+.titulo {
     background-color: #3f8b35;
     color: white;
     padding: 15px;
