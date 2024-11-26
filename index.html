@@ -19,6 +19,59 @@
         </video>
     </div>
     
+
+
+    <div id="produtos">
+        <div class="produto" onclick="toggleImagens(this)">Box</div>
+        <div class="imagens">
+            <img src="imagens/box1.jpg" alt="Box 1">
+            <img src="imagens/box2.jpg" alt="Box 2">
+        </div>
+
+        <div class="produto" onclick="toggleImagens(this)">Portas</div>
+        <div class="imagens">
+            <img src="imagens/portas1.jpg" alt="Portas 1">
+            <img src="imagens/portas2.jpg" alt="Portas 2">
+        </div>
+
+        <div class="produto" onclick="toggleImagens(this)">Fechamentos</div>
+        <div class="imagens">
+            <img src="imagens/fechamento1.jpg" alt="Fechamento 1">
+            <img src="imagens/fechamento2.jpg" alt="Fechamento 2">
+        </div>
+
+        <div class="produto" onclick="toggleImagens(this)">Espelhos</div>
+        <div class="imagens">
+            <img src="imagens/espelho1.jpg" alt="Espelho 1">
+            <img src="imagens/espelho2.jpg" alt="Espelho 2">
+        </div>
+
+        <div class="produto" onclick="toggleImagens(this)">Guarda Corpo</div>
+        <div class="imagens">
+            <img src="imagens/guarda1.jpg" alt="Guarda Corpo 1">
+            <img src="imagens/guarda2.jpg" alt="Guarda Corpo 2">
+        </div>
+
+        <div class="produto" onclick="toggleImagens(this)">Jateados</div>
+        <div class="imagens">
+            <img src="imagens/jateado1.jpg" alt="Jateado 1">
+            <img src="imagens/jateado2.jpg" alt="Jateado 2">
+        </div>
+
+        <div class="produto" onclick="toggleImagens(this)">Janela</div>
+        <div class="imagens">
+            <img src="imagens/janela1.jpg" alt="Janela 1">
+            <img src="imagens/janela2.jpg" alt="Janela 2">
+        </div>
+
+        <div class="produto" onclick="toggleImagens(this)">Manutenção</div>
+        <div class="imagens">
+            <img src="imagens/manutencao1.jpg" alt="Manutenção 1">
+            <img src="imagens/manutencao2.jpg" alt="Manutenção 2">
+        </div>
+
+
+
     <div>
         <h2 class="loca" >Contato</h2>
         <address>
@@ -32,5 +85,20 @@
         <h2 class="loca">Endereço</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.174639239474!2d-46.52860592396227!3d-23.52622037882405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5e3ccaf963df%3A0xa587969b1a4b1645!2sAv.%20Padres%20Olivetanos%2C%20429%20-%20Vila%20Esperan%C3%A7a%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003648-000!5e0!3m2!1sen!2sbr!4v1724355879222!5m2!1sen!2sbr" allowfullscreen="" loading="lazy"></iframe>
     </div>
+
+    <script>
+        function toggleImagens(element) {
+            // Encontra o próximo elemento com a classe 'imagens'
+            const imagens = element.nextElementSibling;
+
+            // Alterna a visibilidade
+            if (imagens.style.display === "block") {
+                imagens.style.display = "none";
+            } else {
+                imagens.style.display = "block";
+            }
+        }
+    </script>
+
 </body>
 </html>
