@@ -10,26 +10,93 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .titulo {
+            text-align: center;
+            font-size: 2.5em;
+            margin-top: 30px;
+            color: #333;
+        }
+        .loca {
+            font-size: 1.8em;
+            margin-top: 30px;
+            color: #333;
         }
         .produto {
             cursor: pointer;
             margin: 10px 0;
-            padding: 10px;
+            padding: 15px;
             background: #f2f2f2;
             border: 1px solid #ccc;
             text-align: center;
             font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .produto:hover {
+            transform: scale(1.05);
+            background-color: #e0e0e0;
+        }
+        .produto:active {
+            transform: scale(0.98);
         }
         .imagens {
             display: none;
             margin: 10px 0;
             text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .imagens.show {
+            display: block;
+            opacity: 1;
         }
         .imagens img {
-            width: 200px; /* Define a largura fixa */
-            height: 150px; /* Define a altura fixa */
-            object-fit: cover; /* Garante que a imagem seja cortada para caber */
-            margin: 5px; /* Espaço entre as imagens */
+            width: 200px; 
+            height: 150px;
+            object-fit: cover;
+            margin: 5px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        video {
+            display: block;
+            margin: 0 auto 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        address {
+            text-align: center;
+            font-size: 1.1em;
+            margin: 20px 0;
+        }
+        iframe {
+            display: block;
+            width: 80%;
+            height: 400px;
+            margin: 0 auto;
+            border: 0;
+            border-radius: 8px;
+        }
+        /* Animação de fade-in para produtos */
+        #produtos .produto {
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+
+        /* Keyframes para fade-in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 
@@ -38,15 +105,12 @@
     <h1 class="titulo">Penha Box</h1>
 
     <div>
-        <h2 class="loca" >Conheça nossa loja:</h2>
-     
+        <h2 class="loca">Conheça nossa loja:</h2>
         <video width="640" height="360" controls>
-            <source src="imagens/video.mp4" type="video/mp4">
+            <source src="imagens/video2.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
         </video>
     </div>
-    
-
 
     <div id="produtos">
         <div class="produto" onclick="toggleImagens(this)">Box</div>
@@ -96,17 +160,16 @@
             <img src="imagens/manutencao.jpg" alt="Manutenção 1">
             <img src="imagens/manutencao 2.jpg" alt="Manutenção 2">
         </div>
-
-
+    </div>
 
     <div>
-        <h2 class="loca" >Contato</h2>
+        <h2 class="loca">Contato</h2>
         <address>
             Avenida Padres Olivetanos 429<br>
             Telefone: <a href="tel:11965974017">11-2957-8208</a><br>
-            <a href="mailto:penhabox@penhabox.com.br">penhabox@penhabox.com.br</a>
-            WhatsApp: 11-9.6597-4017
-            Instagram: @penhabox
+            <a href="mailto:penhabox@penhabox.com.br">penhabox@penhabox.com.br</a><br>
+            WhatsApp: 11-9.6597-4017<br>
+            Instagram: @penhabox<br>
             Facebook: @PenhaBox
         </address>
     </div>
@@ -118,17 +181,9 @@
 
     <script>
         function toggleImagens(element) {
-            // Encontra o próximo elemento com a classe 'imagens'
             const imagens = element.nextElementSibling;
-
-            // Alterna a visibilidade
-            if (imagens.style.display === "block") {
-                imagens.style.display = "none";
-            } else {
-                imagens.style.display = "block";
-            }
+            imagens.classList.toggle('show');
         }
     </script>
-
 </body>
 </html>
