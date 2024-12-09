@@ -98,11 +98,44 @@
                 transform: translateY(0);
             }
         }
+        .loca-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .loca-container img {
+        width: 45%; /* Ajuste conforme necessário */
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Imagens dos produtos */
+    .imagens img {
+        width: 300px; /* Aumente o tamanho aqui */
+        height: 200px; /* Ajuste a altura proporcional */
+        object-fit: cover;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
     </style>
 
 </head>
 <body>
     <h1 class="titulo">Penha Box</h1>
+
+
+    <div>
+        <h2 class="loca">Conheça nossa loja:</h2>
+        <div class="loca-container">
+            <img src="imagens/pb1.jpg" alt="Foto da frente da loja">
+            <img src="imagens/pb2.jpg" alt="Outra foto da frente da loja">
+        </div>
+    </div>
 
 
     <div id="produtos">
@@ -111,8 +144,8 @@
 
         <div class="produto" onclick="toggleImagens(this)">Box</div>
         <div class="imagens">
-            <img src="imagens/box.jpg" alt="Box 1">
-            <img src="imagens/box 2.jpg" alt="Box 2">
+            <img class="box" src="imagens/box.jpg" alt="Box 1">
+            <img class="box" src="imagens/box 2.jpg" alt="Box 2">
         </div>
 
         <div class="produto" onclick="toggleImagens(this)">Portas</div>
